@@ -5,3 +5,4 @@ from . import buku
 from . import pinjam
 from . import res_partner
 from . import pengembalian
+from . import akunting

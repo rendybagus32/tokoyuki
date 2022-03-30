@@ -4,3 +4,4 @@ access_tokoyuki_buku,access.tokoyuki.buku,model_tokoyuki_buku,,1,1,1,1
 access_tokoyuki_pinjam,access.tokoyuki.pinjam,model_tokoyuki_pinjam,,1,1,1,1
 access_tokoyuki_pinjamdetailbuku,access.tokoyuki.pinjamdetailbuku,model_tokoyuki_pinjamdetailbuku,,1,1,1,1
 access_tokoyuki_pengembalian,access.tokoyuki.pengembalian,model_tokoyuki_pengembalian,,1,1,1,1
+access_tokoyuki_akunting,access.tokoyuki.akunting,model_tokoyuki_akunting,,1,1,1,1

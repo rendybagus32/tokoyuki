@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    #actreport
+    <!-- #actreport -->
     <record id="report_tokoyuki_pinjam" model="ir.actions.report">
         <field name="name">Report Order Buku</field>
         <field name="model">tokoyuki.pinjam</field>
         <field name="report_type">qweb-pdf</field>
         <field name="report_name">tokoyuki.report_tokoyuki.pinjam</field>
         <field name="report_file">tokoyuki.report_tokoyuki.pinjam</field>
-        <field name="binding_model_id" ref="model_tokoyuki.pinjam"/>
+        <field name="binding_model_id" ref="model_tokoyuki_pinjam"/>
         <field name="binding_type">report</field>
     </record>
 

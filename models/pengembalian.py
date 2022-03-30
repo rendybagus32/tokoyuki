@@ -13,7 +13,7 @@ class Pengembalian(models.Model):
         for record in self:
             record.name = self.env['tokoyuki.pinjam'].search([('id', '=', record.order_id.id)]).mapped('pemesan').name
     
-    tgl_pengembalian = fields.Date(string='', default=fields.Date.today())
+    tgl_pengembalian = fields.Date(string='Tanggal Pengembalian', default=fields.Date.today())
     
     tagihan = fields.Integer(compute='_compute_tagihan', string='tagihan')
     
@@ -28,7 +28,7 @@ class Pengembalian(models.Model):
         record = super(Pengembalian, self).create(vals) 
         if record.tgl_pengembalian:
             self.env['tokoyuki.pinjam'].search([('id','=',record.order_id.id)]).write({'sudah_kembali':True}) 
-            # self.env['wedding.akunting'].create({'kredit' : record.tagihan, 'name':record.name})          
+            self.env['tokoyuki.akunting'].create({'kredit' : record.tagihan, 'name':record.name})          
             return record
 
     def unlink(self):

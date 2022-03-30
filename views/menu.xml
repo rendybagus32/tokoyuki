@@ -21,4 +21,11 @@
         parent="tokoyuki_menu_root" 
         sequence="20"/>
 
+    <!-- This Menu Item Must have a parent -->
+    <menuitem 
+        id="tokoyuki_akunting_menu_categ" 
+        name="Akunting" 
+        parent="tokoyuki_menu_root" 
+        sequence="30"/>
+
 </odoo>

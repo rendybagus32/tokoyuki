@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- tokoyuki.pengembalian tree view -->
+    <record id="tokoyuki_pengembalian_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pengembalian Barang</field>
+        <field name="model">tokoyuki.pengembalian</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="order_id"/>
+                <field name="name"/>             
+                <field name="tagihan"/> 
+                <field name="tgl_pengembalian"/>      
+            </tree>
+        </field>
+    </record>
+
     <!-- tokoyuki.pengembalian form view -->
     <record id="tokoyuki_pengembalian_view_form" model="ir.ui.view">
         <field name="name">Pengembalian Barang</field>
@@ -26,21 +41,7 @@
         </field>
     </record>
 
-    <!-- tokoyuki.pengembalian tree view -->
-    <record id="tokoyuki_pengembalian_view_tree" model="ir.ui.view">
-        <field name="name">Daftar Pengembalian Barang</field>
-        <field name="model">tokoyuki.pengembalian</field>
-        <field name="arch" type="xml">
-            <tree>
-                <!-- Add your fields here -->
-                <field name="order_id"/>
-                <field name="name"/>             
-                <field name="tagihan"/> 
-                <field name="tgl_pengembalian"/>      
-            </tree>
-        </field>
-    </record>
-
+    
     <!-- tokoyuki.pengembalian action window -->
     <record id="tokoyuki_pengembalian_action" model="ir.actions.act_window">
         <field name="name">Pengembalian Barang</field>
