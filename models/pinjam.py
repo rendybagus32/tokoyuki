@@ -16,7 +16,7 @@ class Pinjam(models.Model):
     pemesan = fields.Many2one(
         comodel_name='res.partner', 
         string='Pemesan', 
-        domain=[('is_customernya', '=', True)],store=True)        
+        domain=[('is_mahasiswa', '=', True)],store=True)        
 
     total = fields.Integer(compute='_compute_total', string='Total', store=True)
     
@@ -58,7 +58,7 @@ class PinjamDetailBuku(models.Model):
     @api.constrains('qty') #untuk check kursi
     def _check_stok(self):
         for record in self:
-            bahan = self.env['tokoyuki.buku'].search([('stok', '<',record.qty),('id', '=',record.id)])
+            bahan = self.env['tokoyuki.buku'].search([('qty', '<',record.qty),('id', '=',record.id)])
             if bahan:
                 raise ValidationError("Stok buku yang dipilih tidak cukup")
 
@@ -73,5 +73,5 @@ class PinjamDetailBuku(models.Model):
     def create(self,vals):
         record = super(PinjamDetailBuku, self).create(vals) 
         if record.qty:
-            self.env['tokoyuki.buku'].search([('id','=',record.buku_id.id)]).write({'stok':record.buku_id.stok-record.qty})
+            self.env['tokoyuki.buku'].search([('id','=',record.buku_id.id)]).write({'qty':record.buku_id.qty-record.qty})
             return record

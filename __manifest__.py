@@ -32,6 +32,7 @@
         'views/buku_views.xml',
         'views/pinjam_views.xml',
         'views/datamahasiswa_views.xml',
+        'views/pengembalian_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

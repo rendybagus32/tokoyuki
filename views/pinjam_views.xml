@@ -4,7 +4,7 @@
     <!-- tokoyuki.pinjam tree view -->
     <!-- #otree -->
     <record id="tokoyuki_pinjam_view_tree" model="ir.ui.view">
-        <field name="name">Data pPnjaman</field>
+        <field name="name">Data Pinjaman</field>
         <field name="model">tokoyuki.pinjam</field>
         <field name="arch" type="xml">
             <tree>
@@ -33,7 +33,7 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
-                        <!-- <field name="pemesan"/> -->
+                        <field name="pemesan"/>
                         <field name="tanggal_pinjam"/>
                         <field name="tanggal_pengembalian"/>
                         <field name="total"/>
@@ -63,10 +63,10 @@
 
     <!-- This Menu Item must have a parent and an action -->
     <menuitem 
-    id="tokoyuki_pinjam_menu_act" 
-    name="Pinjam Buku" 
-    parent="tokoyuki_buku_menu_categ" 
-    action="tokoyuki_pinjam_action" 
-    sequence="20"/>
+        id="tokoyuki_pinjam_menu_act" 
+        name="Pinjam Buku" 
+        parent="tokoyuki_buku_menu_categ" 
+        action="tokoyuki_pinjam_action" 
+        sequence="20"/>
 
 </odoo>

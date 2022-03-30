@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tokoyuki.pengembalian form view -->
+    <record id="tokoyuki_pengembalian_view_form" model="ir.ui.view">
+        <field name="name">Pengembalian Barang</field>
+        <field name="model">tokoyuki.pengembalian</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="order_id"/>
+                        <field name="name"/>
+                    </group>
+                     <group>                        
+                        <field name="tgl_pengembalian"/>
+                    </group>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="tagihan"/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tokoyuki.pengembalian tree view -->
+    <record id="tokoyuki_pengembalian_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pengembalian Barang</field>
+        <field name="model">tokoyuki.pengembalian</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="order_id"/>
+                <field name="name"/>             
+                <field name="tagihan"/> 
+                <field name="tgl_pengembalian"/>      
+            </tree>
+        </field>
+    </record>
+
+    <!-- tokoyuki.pengembalian action window -->
+    <record id="tokoyuki_pengembalian_action" model="ir.actions.act_window">
+        <field name="name">Pengembalian Barang</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tokoyuki.pengembalian</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="tokoyuki_pengembalian_menu_act" 
+        name="Pengembalian Buku"
+        parent="tokoyuki_buku_menu_categ" 
+        action="tokoyuki_pengembalian_action" 
+        sequence="30"/>
+
+</odoo>

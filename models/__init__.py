@@ -4,3 +4,4 @@ from . import models
 from . import buku
 from . import pinjam
 from . import res_partner
+from . import pengembalian
