@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_tokoyuki_buku,access.tokoyuki.buku,model_tokoyuki_buku,,1,1,1,1
+access_tokoyuki_pinjam,access.tokoyuki.pinjam,model_tokoyuki_pinjam,,1,1,1,1
+access_tokoyuki_pinjamdetailbuku,access.tokoyuki.pinjamdetailbuku,model_tokoyuki_pinjamdetailbuku,,1,1,1,1

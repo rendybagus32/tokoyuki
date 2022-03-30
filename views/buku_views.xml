@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- tokoyuki.buku tree view -->
+    <record id="tokoyuki_buku_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Buku</field>
+        <field name="model">tokoyuki.buku</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <!-- <field name="judul"/> -->
+                <field name="qty"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- <menuform> -->
+    <record id="tokoyuki_buku_view_form" model="ir.ui.view">
+        <field name="name">Form Toko Yuki</field>
+        <field name="model">tokoyuki.buku</field>
+        <field name="arch" type="xml">
+            <form string="Form Toko Yuki">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <!-- <field name="judul"/> -->
+                        <field name="qty"/>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tokoyuki.buku action window -->
+    <record id="tokoyuki_buku_action" model="ir.actions.act_window">
+        <field name="name">Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tokoyuki.buku</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+    id="tokoyuki_buku_menu_act" 
+    name="Buku" 
+    parent="tokoyuki_buku_menu_categ"
+    action="tokoyuki_buku_action" 
+    sequence="10"/>
+
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- tokoyuki.pinjam tree view -->
+    <!-- #otree -->
+    <record id="tokoyuki_pinjam_view_tree" model="ir.ui.view">
+        <field name="name">Data pPnjaman</field>
+        <field name="model">tokoyuki.pinjam</field>
+        <field name="arch" type="xml">
+            <tree>
+            <header>
+                <button name="kembali_barang" string="Kembali Barang" class="btn btn-success" type="object"/>
+             </header>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="pemesan"/>
+                <field name="tanggal_pinjam"/>
+                <field name="tanggal_pengembalian"/>
+                <field name="total"/>
+                <field name="sudah_kembali"/>
+                <field name="pinjamdetailbuku_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- tokoyuki.pinjam form view -->
+    <record id="tokoyuki_pinjam_view_form" model="ir.ui.view">
+        <field name="name">Form Order</field>
+        <field name="model">tokoyuki.pinjam</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <!-- <field name="pemesan"/> -->
+                        <field name="tanggal_pinjam"/>
+                        <field name="tanggal_pengembalian"/>
+                        <field name="total"/>
+                        <field name="sudah_kembali"/>
+                        <field name="pinjamdetailbuku_ids">
+                            <tree editable='bottom'>
+                                <field name="buku_id"/>  
+                                <field name="harga_satuan"/> 
+                                <field name="qty"/> 
+                                <field name="harga" sum="Total"/>                                        
+                            </tree>
+                        </field>                           
+                    </group>   
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tokoyuki.pinjam action window -->
+    <!-- #oact -->
+    <record id="tokoyuki_pinjam_action" model="ir.actions.act_window">
+        <field name="name">Pinjam Buku</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tokoyuki.pinjam</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+    id="tokoyuki_pinjam_menu_act" 
+    name="Pinjam Buku" 
+    parent="tokoyuki_buku_menu_categ" 
+    action="tokoyuki_pinjam_action" 
+    sequence="20"/>
+
+</odoo>
